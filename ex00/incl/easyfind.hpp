@@ -12,8 +12,8 @@ class NotFoundException : public std::exception {
 		}
 };
 
-template<typename T>
-int	easyfind(T[] array, int to_find)
+template <typename T>
+int	easyfind(T array, int to_find)
 {
 	typename T::const_iterator	it;
 
