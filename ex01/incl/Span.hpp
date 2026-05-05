@@ -23,7 +23,6 @@ class Span {
 		std::vector<int>	_nums;
 		long long		_min_span;
 		long long		_max_span;
-		void	calculateSpans();
 	public:
 		Span();
 		Span(unsigned int N);
@@ -32,7 +31,7 @@ class Span {
 		~Span();
 		void		addNumber(int num);
 		void	addNumbers(std::vector<int> range);
-		long long	shortestSpan(void) const;
-		long long	longestSpan(void) const;
+		long long	shortestSpan(void);
+		long long	longestSpan(void);
 };
 #endif

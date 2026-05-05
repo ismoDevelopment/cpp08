@@ -34,28 +34,12 @@ Span::~Span()
 
 }
 
-void	Span::calculateSpans()
-{
-	std::sort(this->_nums.begin(), this->_nums.end());
-
-	for (auto it = this->_nums.begin(); it != this->_nums.end(); ++it)
-	{
-		long long	span = llabs(*it - *(it + 1));
-
-		if (span < this->_min_span)
-			this->_min_span = span;
-		if (span > this->_max_span)
-			this->_max_span = span;
-	}
-}
-
 void	Span::addNumber(int num)
 {
 	if (this->_nums.size() >= this->_N)
 		throw SpanFullException();
 
 	this->_nums.push_back(num);
-	this->calculateSpans();
 }
 
 void	Span::addNumbers(std::vector<int> range)
@@ -64,19 +48,30 @@ void	Span::addNumbers(std::vector<int> range)
 		throw SpanFullException();
 
 	this->_nums.insert(this->_nums.end(), range.begin(), range.end());
-	this->calculateSpans();
 }
 
-long long	Span::shortestSpan(void) const
+long long	Span::shortestSpan(void)
 {
 	if (this->_nums.size() <= 1)
 		return (0);
+
+	std::sort(this->_nums.begin(), this->_nums.end());
+
+	for (auto it = this->_nums.begin(); it != this->_nums.end(); ++it)
+	{
+		long long	span = llabs(*it - *(it + 1));
+
+		if (span < this->_min_span)
+			this->_min_span = span;
+	}
 	return (this->_min_span);
 }
 
-long long	Span::longestSpan(void) const
+long long	Span::longestSpan(void)
 {
 	if (this->_nums.size() <= 1)
 		return (0);
+	std::sort(this->_nums.begin(), this->_nums.end());
+	this->_max_span = this->_nums.back() - this->_nums.front();
 	return (this->_max_span);
 }
