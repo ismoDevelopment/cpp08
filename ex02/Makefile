@@ -1,4 +1,4 @@
-NAME = span
+NAME = mutant
 TMP_DIR = tmp
 SRC_DIR = src
 CXX = c++
