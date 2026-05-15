@@ -8,7 +8,7 @@ class NotFoundException : public std::exception {
 	public:
 		const char *what() const throw()
 		{
-			return ("Integer not found in iterator\n");
+			return ("Integer not found in iterator");
 		}
 };
 

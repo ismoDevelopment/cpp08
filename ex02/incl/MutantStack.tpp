@@ -1,13 +1,13 @@
 #include "MutantStack.hpp"
 
 template <class T>
-MutantStack<T>::MutantStack()
+MutantStack<T>::MutantStack() : std::stack<T>()
 {
 
 }
 
 template <class T>
-MutantStack<T>::MutantStack([[maybe_unused]] const MutantStack<T> &other)
+MutantStack<T>::MutantStack([[maybe_unused]] const MutantStack<T> &other) : std::stack<T>(other)
 {
 
 }
@@ -15,6 +15,7 @@ MutantStack<T>::MutantStack([[maybe_unused]] const MutantStack<T> &other)
 template <class T>
 MutantStack<T> MutantStack<T>::operator=([[maybe_unused]] const MutantStack<T> &other)
 {
+	std::stack<T>::operator=(other);
 	return (*this);
 }
 

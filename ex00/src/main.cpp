@@ -7,6 +7,12 @@
 
 int	main(void)
 {
+	/*
+
+		Easyfind on an Array
+
+	*/
+
 	std::cout << "Testing easyfind on an array" << std::endl;
 	try
 	{
@@ -17,6 +23,12 @@ int	main(void)
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+
+	/*
+
+		Easyfind on a Vector
+
+	*/
 
 	std::cout << "Testing easyfind on a vector" << std::endl;
 	try
@@ -29,6 +41,13 @@ int	main(void)
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+
+
+	/*
+
+		Easyfind on a Deque with values contained and not contained
+
+	*/
 
 	std::cout << "Testing easyfind on a deque" << std::endl;
 	try

@@ -11,9 +11,9 @@ int main()
 	std::mt19937					rng(rnd());
 	std::uniform_int_distribution<>	distribution(0, INT_MAX);
 
-	Span sp = Span(1000);
+	Span sp = Span(10000);
 
-	for (int	i{}; i < 1000; i++)
+	for (int	i{}; i < 10000; i++)
 	{
 		sp.addNumber(distribution(rng));
 	}
@@ -26,6 +26,7 @@ int main()
 		ADDING A NUMBER TO A FULL SPAN
 
 	*/
+
 	std::cout << "\n";
 	try {
 			Span sp2 = Span(sp);
@@ -43,6 +44,7 @@ int main()
 		ADDING MULTIPLE NUMBERS
 
 	*/
+
 	std::cout << "\n";
 
 	Span sp3 = Span(10000);
